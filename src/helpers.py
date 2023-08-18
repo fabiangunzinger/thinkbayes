@@ -12,13 +12,13 @@ def download(url):
         print('Downloaded ' + local)
 
 
-def read_gss():
-    """Add required columns to GSS DataFrame."""
-    df = pd.read_csv('data/gss_bayes.csv', index_col=0)
-    df['banker'] = df['indus10'] == 6870
-    df['liberal'] = df['polviews'] <= 3
-    df['democrat'] = df['partyid'] <= 1
-    return df
+def prob(A):
+    """Computes the probability of a proposition, A."""    
+    return A.mean()
 
+
+def conditional(proposition, given):
+    """Probability of A conditioned on given."""
+    return prob(proposition[given])
 
 
