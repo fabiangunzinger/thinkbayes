@@ -21,4 +21,3 @@ def conditional(proposition, given):
     """Probability of A conditioned on given."""
     return prob(proposition[given])
 
-
